@@ -6,24 +6,28 @@ import (
 	"net/http"
 )
 
+// struct to represent a book
 type Book struct {
 	ID     string `json:"id"`
 	Title  string `json:"title"`
 	Author string `json:"author"`
 }
 
+// map to store books
 var books = make(map[string]Book)
 
+// channels to send response and error messages
 var respChan = make(chan []byte)
-
 var errChan = make(chan []byte)
 
+// main function
 func main() {
 	http.HandleFunc("/books", handleBooks)
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
+// handleBooks function to handle all requests
 func handleBooks(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
@@ -40,6 +44,7 @@ func handleBooks(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// addBook function to add a book to the map
 func addBook(r *http.Request, respChan, errChan chan<- []byte) {
 	var book Book
 	err := json.NewDecoder(r.Body).Decode(&book)
@@ -60,6 +65,7 @@ func addBook(r *http.Request, respChan, errChan chan<- []byte) {
 	respChan <- response
 }
 
+// getAllBooks function to get all books from the map
 func getAllBooks(respChan, errChan chan<- []byte) {
 	response, err := json.Marshal(books)
 	if err != nil {
@@ -71,6 +77,7 @@ func getAllBooks(respChan, errChan chan<- []byte) {
 	respChan <- response
 }
 
+// deleteBook function to delete a book from the map
 func deleteBook(r *http.Request, respChan, errChan chan<- []byte) {
 	id := r.URL.Query().Get("id")
 
@@ -86,6 +93,7 @@ func deleteBook(r *http.Request, respChan, errChan chan<- []byte) {
 	respChan <- response
 }
 
+// sendResponse function to send response to the client
 func sendResponse(w http.ResponseWriter) {
 	select {
 	case resp := <-respChan:
