@@ -26,29 +26,31 @@ To install and run the BookAPI locally, follow these steps:
    
    cd BookAPI
    
-   go run main.go```
+   go run main.go
     
-  The BookAPI will be accessible at http://localhost:8080.
+   The BookAPI will be accessible at http://localhost:8080.
     
-##Usage
+## Usage
 
 The BookAPI provides the following endpoints:
 
-POST /books: Add a new book to the collection.
-GET /books: Retrieve all books from the collection.
-DELETE /books?id=<bookID>: Delete a book from the collection by ID.
-You can use tools like cURL or Postman to interact with the API.
+   1. POST /books: Add a new book to the collection.
+   2. GET /books: Retrieve all books from the collection.
+   3. DELETE /books?id=<bookID>: Delete a book from the collection by ID.
+   
+   You can use tools like cURL or Postman to interact with the API.
 
-##Testing
+## Testing
   
-The BookAPI includes unit tests to ensure its functionality. To run the tests, execute the following command:
+   The BookAPI includes unit tests to ensure its functionality. To run the tests, execute the following command:
+   
+   ```bash
+   go test ./...
 
-  ``go test ./...```
+   This will run all the tests in the project and provide the test results.
 
-  This will run all the tests in the project and provide the test results.
-
-##Contributing
+## Contributing
   
-Contributions to the BookAPI project are welcome! If you find any issues or have suggestions for improvement, please create an issue or submit a pull request.
+   Contributions to the BookAPI project are welcome! If you find any issues or have suggestions for improvement, please create an issue or submit a pull request.
 
-Before contributing, please review the CONTRIBUTING.md file for guidelines.
+   Before contributing, please review the CONTRIBUTING.md file for guidelines.
