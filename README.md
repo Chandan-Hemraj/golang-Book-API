@@ -45,4 +45,8 @@ The BookAPI includes unit tests to ensure its functionality. To run the tests, e
    ```bash
    go test ./...
    
+<<<<<<< HEAD
 This will run all the tests in the project and provide the test results.
+=======
+This will run all the tests in the project and provide the test results.
+>>>>>>> 56d218ce1739f6d9b2be092e5a82b6afb4dbb47f
