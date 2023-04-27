@@ -40,14 +40,7 @@ You can use tools like cURL or Postman to interact with the API.
 ## Testing
 
 The BookAPI includes unit tests to ensure its functionality. To run the tests, execute the following command:
-   
    ```bash
-   go test ./...```
-
- This will run all the tests in the project and provide the test results.
-
-## Contributing
+   go test ./...
    
-Contributions to the BookAPI project are welcome! If you find any issues or have suggestions for improvement, please create an issue or submit a pull request.
-
-Before contributing, please review the CONTRIBUTING.md file for guidelines.
+This will run all the tests in the project and provide the test results.
