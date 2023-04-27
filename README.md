@@ -28,7 +28,7 @@ To install and run the BookAPI locally, follow these steps:
    
    go run main.go
     
-   The BookAPI will be accessible at http://localhost:8080.
+  The BookAPI will be accessible at http://localhost:8080.
     
 ## Usage
 
@@ -41,8 +41,8 @@ The BookAPI provides the following endpoints:
    You can use tools like cURL or Postman to interact with the API.
 
 ## Testing
-  
-   The BookAPI includes unit tests to ensure its functionality. To run the tests, execute the following command:
+
+The BookAPI includes unit tests to ensure its functionality. To run the tests, execute the following command:
    
    ```bash
    go test ./...
@@ -50,7 +50,7 @@ The BookAPI provides the following endpoints:
  This will run all the tests in the project and provide the test results.
 
 ## Contributing
-  
- Contributions to the BookAPI project are welcome! If you find any issues or have suggestions for improvement, please create an issue or submit a pull request.
+   
+Contributions to the BookAPI project are welcome! If you find any issues or have suggestions for improvement, please create an issue or submit a pull request.
 
- Before contributing, please review the CONTRIBUTING.md file for guidelines.
+Before contributing, please review the CONTRIBUTING.md file for guidelines.
