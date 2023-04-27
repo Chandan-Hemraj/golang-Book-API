@@ -1,5 +1,9 @@
 # BookAPI
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/87279692/179357699-db195af3-35a2-4354-8a6a-4f8a6647f288.png" height="350px" alt="">
+</p>
+
 This is a simple CRUD API for managing books built using Golang and Goroutines.
 
 ## Table of Contents
