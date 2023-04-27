@@ -24,7 +24,10 @@ var errChan = make(chan []byte)
 func main() {
 	http.HandleFunc("/books", handleBooks)
 
+	log.Println("Server started on http://localhost:8080")
+
 	log.Fatal(http.ListenAndServe(":8080", nil))
+
 }
 
 // handleBooks function to handle all requests
@@ -46,6 +49,7 @@ func handleBooks(w http.ResponseWriter, r *http.Request) {
 
 // addBook function to add a book to the map
 func addBook(r *http.Request, respChan, errChan chan<- []byte) {
+	log.Println("Got a request to add a book")
 	var book Book
 	err := json.NewDecoder(r.Body).Decode(&book)
 	if err != nil {
@@ -62,11 +66,13 @@ func addBook(r *http.Request, respChan, errChan chan<- []byte) {
 		return
 	}
 
+	log.Println("Book added successfully")
 	respChan <- response
 }
 
 // getAllBooks function to get all books from the map
 func getAllBooks(respChan, errChan chan<- []byte) {
+	log.Println("Got a request to get all books")
 	response, err := json.Marshal(books)
 	if err != nil {
 		log.Println("Error marshaling response:", err)
@@ -74,11 +80,13 @@ func getAllBooks(respChan, errChan chan<- []byte) {
 		return
 	}
 
+	log.Println("Fetched all the books successfully")
 	respChan <- response
 }
 
 // deleteBook function to delete a book from the map
 func deleteBook(r *http.Request, respChan, errChan chan<- []byte) {
+	log.Println("Got a request to delete a book")
 	id := r.URL.Query().Get("id")
 
 	delete(books, id)
@@ -90,6 +98,7 @@ func deleteBook(r *http.Request, respChan, errChan chan<- []byte) {
 		return
 	}
 
+	log.Println("Book deleted successfully")
 	respChan <- response
 }
 
