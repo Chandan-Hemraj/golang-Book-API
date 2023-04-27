@@ -23,22 +23,20 @@ To install and run the BookAPI locally, follow these steps:
 
    ```bash
    git clone https://github.com/Chandan-Hemraj/golang-Book-API
-   
    cd BookAPI
-   
    go run main.go
-    
   The BookAPI will be accessible at http://localhost:8080.
     
 ## Usage
 
 The BookAPI provides the following endpoints:
 
+   ```bash
    1. POST /books: Add a new book to the collection.
    2. GET /books: Retrieve all books from the collection.
    3. DELETE /books?id=<bookID>: Delete a book from the collection by ID.
    
-   You can use tools like cURL or Postman to interact with the API.
+You can use tools like cURL or Postman to interact with the API.
 
 ## Testing
 
