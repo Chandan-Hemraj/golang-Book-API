@@ -8,8 +8,6 @@ This is a simple CRUD API for managing books built using Golang and Goroutines.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Description
 
